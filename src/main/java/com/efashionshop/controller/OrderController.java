@@ -54,7 +54,7 @@ public class OrderController {
 		
 		List<Order>orders=orderService.usersOrderHistory(user.getId());
 		
-		return new ResponseEntity<>(orders,HttpStatus.CREATED);
+		return new ResponseEntity<List<Order>>(orders,HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/{Id}")

@@ -103,12 +103,13 @@ public class ProductServiceImplementation implements ProductService {
 	public Product updateProduct(Long productId, Product req) throws ProductException {
 		
 		Product product=findProductById(productId);
+
+		req.setCategory(product.getCategory());
+		req.setSizes(product.getSizes());
+
+		System.out.println(req.getId() + req.getTitle());
 		
-		if(req.getQuantity()!=0) {
-			product.setQuantity(req.getQuantity());
-		}
-		
-		return productRepository.save(product);
+		return productRepository.save(req);
 	}
 
 	@Override

@@ -60,7 +60,6 @@ public class UserServiceImplementation implements UserService {
 	}
 
 	public void update(User user) throws UserException{
-		user.setRole("ADMIN");
 		userRepository.save(user);
 	}
 
